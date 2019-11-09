@@ -1,11 +1,14 @@
 package fastmoving.tcc.FastMoving.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.*;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +24,7 @@ public class Cartao {
 	@Id
 	private int id;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern =  "dd/MM/yyyy", locale = "pt-BR" ,timezone="AGT")
 	@Column(name="data_vencimento")
 	private Date data;
 	
